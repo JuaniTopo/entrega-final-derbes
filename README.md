@@ -16,6 +16,8 @@ Se generó una aplicación web estilo blog programada en Python en Django. Dentr
 
 Se cumplió con los requisitos de lo que tenía que incluir cada model (autor, título, cuerpo, fecha e imagen)
 
+Para agregar post se debe ingresar como Admin, se puede seleccionar desde allí si se quiere que el post sea featured para figurar en destacados o no. 
+
 ## Prerequisitos
 
 - Python 3.6+ instalado

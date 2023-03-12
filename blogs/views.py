@@ -30,9 +30,7 @@ def home_page(request):
 
 class PostDetailView(generic.DetailView):
     model = Post
-    queryset = Post.objects.filter(
-        pub_date__lte=timezone.now()
-    )
+    queryset = Post.objects.all()
 
 
 class FeaturedListView(ListView):
@@ -51,10 +49,8 @@ class CategoryListView(ListView):
     template_name = 'blogs/results.html' 
 
     def get_queryset(self):
-        query = self.request.path
-        post_list = Post.objects.filter(categories__slug=query).filter(
-            pub_date__lte=timezone.now()
-        )
+        query = self.request.path.rsplit('/')[-1]
+        post_list = Post.objects.filter(categories__slug=query)
         return post_list
 
 
