@@ -4,6 +4,7 @@ from django.views import generic
 from django.views.generic.list import ListView
 from django.utils import timezone
 from django.db.models import Q
+from django.views.generic import TemplateView
 
 from blogs.models import Post, Category
 
@@ -69,3 +70,6 @@ class SearchResultsView(ListView):
             pub_date__lte=timezone.now()
         ).distinct()
         return post_list
+
+class AboutMeView(TemplateView):
+    template_name = 'blogs/about_me.html'
