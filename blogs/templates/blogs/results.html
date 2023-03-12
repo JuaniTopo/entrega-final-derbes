@@ -10,7 +10,7 @@
                 <h3 class="pb-4 mb-4 fst-italic border-bottom">
                     Artículos Destacados
                 </h3>
-                {% for post in posts %}
+                {% for post in object_list %}
                     <div class="card mb-3">
                     {% if post.image %}
                         <img src="{{ post.image.url }}" class="card-img-top" alt="thumbnail">
